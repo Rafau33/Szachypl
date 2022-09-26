@@ -1,0 +1,5 @@
+//- animacja skakania miedzy podstronami
+- podstrona o figurach
+- podstrona o historii szachów
+- podstrona z grą
+- strona główna

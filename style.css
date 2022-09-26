@@ -1,0 +1,90 @@
+body{
+    background-image: url(assets/grid.png);
+    background-size: 5vw;
+    padding-top: 170px;
+
+}
+#panel{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 170px;
+    background-color: rgb(255, 255, 255);
+}
+h3{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 60px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+    max-height: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+h2{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+    white-space: nowrap;
+    overflow: hidden;
+}
+a{
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: underline;
+    transition-duration: 100ms;
+}
+a:hover{
+    cursor: pointer;
+    transition-duration: 100ms;
+    color: #0000EE;;
+}
+.current{
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+}
+.current:hover{
+    color: white;
+}
+.content{
+    padding: 10px;
+    z-index: -1;
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    transform: translate(-50%,0);
+    text-align: center;
+    width: 1000px;
+    min-height: 99%;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+h1{
+    margin-top: 25px;
+    text-align: justify;
+    /*text-align-last: center;*/
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+
+}
+footer{
+    clear: both;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+#gra{
+    background-image: url(assets/grid.png);
+    background-size: 25%;
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
