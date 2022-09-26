@@ -1,6 +1,8 @@
 var board
+var tura
 function reset(){
     //reset the 2D array, which will be the "board" for our logic
+    tura = "w";
     board = new Array(8);
     for(var x = 0; x<8;x++){
         board[x] = new Array(8);
@@ -106,6 +108,23 @@ function logicToBoard(){
                 document.getElementById('cell_'+x+"_"+y).innerHTML = "♚";
             }
         }
+    }
+}
+var clicked = 0;
+function clicked(x,y){
+    console.log("clicked"+x+y+"cell");
+    if(clicked == 0){
+        clicked = 1;
+    }else{
+        clicked = 0;
+    }
+}
+
+//code stolen from my other project https://github.com/Rafau33/WaveFnCollapse
+for(var x=0; x<8; x++){
+    document.getElementsByTagName('table').item(0).innerHTML += '<tr></tr>';
+    for(var y=0; y<8; y++){
+        document.getElementsByTagName('tr').item(x).innerHTML += "<td><div onclick='console.log("+x+','+y+");' class='cell' id='cell_"+y+"_"+x+"'></div></td>"
     }
 }
 reset();
