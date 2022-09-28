@@ -10,16 +10,26 @@
     
 </head>
 <body oncontextmenu="return false;">
+
     <div id="panel" >
         <h3><img style="vertical-align: bottom" height="73px" width="auto "src="../assets/pionek.png">Szachy.pl</h3>
+        <div id="links">
+            <h2><a href="../strona_glowna/index.html">Strona główna</a> <a href="../historia_szachow/index.html">Historia szachów</a> <a href="../poznaj_bierki/index.html">Poznaj bierki</a> <a class="current" href="../zagraj_w_szachy/index.html">Zagraj w szachy</a></h2>
+        </div>
         
-        <h2><a href="../strona_glowna/index.html">Strona główna</a> <a href="../historia_szachow/index.html">Historia szachów</a> <a href="../poznaj_bierki/index.html">Poznaj bierki</a> <a class="current" href="../zagraj_w_szachy/index.html">Zagraj w szachy</a></h2>
     </div>
+    <div id="phonepanel">
+        <div id="linksphone">
+            <h2><a href="../strona_glowna/index.html">Strona główna</a> <a href="../historia_szachow/index.html">Historia szachów</a><br> <a href="../poznaj_bierki/index.html">Poznaj bierki</a> <a class="current" href="../zagraj_w_szachy/index.html">Zagraj w szachy</a></h2>
+        </div>
+    </div>
+
     <script src="../onload.js"></script>
     <div class="content">
         <h1 style="font-size: 35px; text-align: center;">Zagraj w szachy</h1>
-        <h1>
-           
+        <h1 id="onlyPhone">
+           Uwaga - ta podstrona nie jest przeznaczona na smartfony i urządzenia o małym ekranie - dla dobrego doświadczenia skorzstaj z komputera. Zapraszamy jednak na resztę strony - powinna wyglądać dobrze na twoim telefonie.
+            <div style="height:100vh;width: 1px;"></div>
         </h1>
         <div id="gra">
             <table cellspacing="0">
@@ -31,6 +41,7 @@
             Adam Rafałowski and Franciszek Bartłomiejczyk 2022
         </footer>
         <script src="game.js"></script>
+        <br><br><br>
     </div>
 </body>
 </html>
