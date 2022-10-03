@@ -1,5 +1,6 @@
-var board
-var tura
+var board;
+var tura;
+var locked;
 function reset(){
     //reset the 2D array, which will be the "board" for our logic
     tura = "w";
@@ -47,12 +48,13 @@ function reset(){
         }
     }
 
-    console.log(board);
+    
     //debug
 }
 
 //make our array influence the board
 function logicToBoard(){
+    console.log(board);
     for(var x = 0; x < 8; x++){
         for(var y = 0; y < 8; y++){
             // 0 - nothing
@@ -110,22 +112,83 @@ function logicToBoard(){
         }
     }
 }
-var clicked = 0;
-function clicked(x,y){
-    console.log("clicked"+x+y+"cell");
-    if(clicked == 0){
-        clicked = 1;
-    }else{
-        clicked = 0;
+function clicked(a,b){
+    if(!locked){
+        //alert(a+","+b);
+        if(tura == "w"){
+            if (board[a][b]%2 == 1){
+                alert('biały');
+                locked = true;
+                var figure = board[a][b];
+                var num = [a,b];
+            }
+            else if (board[a][b]%2 == 0 && board[a][b] != 0){
+                alert('afroamerykański - a tura białych');
+            }
+            else if (board[a][b] == 0){
+                alert('puste pole')
+            }
+
+            }else if(tura == "b"){
+            if (board[a][b]%2 == 1){
+                alert('biały - a tura czarnych');
+
+            }
+            else if (board[a][b]%2 == 0 && board[a][b] != 0){
+                alert('afroamerykański');
+                locked = true;
+                var figure = board[a][b];
+                var num = [a,b];
+            }
+            else if (board[a][b] == 0){
+                alert('puste pole');
+            }
+
+        }
+        
+        
+    }
+    else{
+            if (tura == "w"){
+                if(board[num[0]][num[1]] == 1){
+                    alert('pion');
+                    if ((board[a][b]) == 0){
+                        if((num[1]-1) == b){
+                            board[a][(num[1])] = 0;
+                            board[a][b] = 1; //white pawn
+                            logicToBoard();
+                        } else if ((num[1] == 6) && ((num[1]-2) == b)){
+                            if (board[a][b] == 0){
+                                board[a][(num[1])] = 0;
+                                board[a][b] = 1; //white pawn
+                                logicToBoard();
+                            }
+                        }
+                    }
+
+                }
+                tura = "b";
+                locked = false;
+                alert('w2b');
+            }
+            else if (tura == "b"){
+                tura = "w";
+                locked = false;
+                alert('b2w');
+            }
+            
+        }
+    }
+
+
+
+for(var x=0; x<8; x++){
+    document.getElementsByTagName('table').item(0).innerHTML += '<tr></tr>';
+    for(var y=0; y<8; y++){ //
+        document.getElementsByTagName('tr').item(x).innerHTML += "<td id='dlaczegotd'><div onclick='clicked("+y+","+x+")' class='cell' id='cell_"+y+"_"+x+"'></div></td>";
     }
 }
 
-//code stolen from my other project https://github.com/Rafau33/WaveFnCollapse
-for(var x=0; x<8; x++){
-    document.getElementsByTagName('table').item(0).innerHTML += '<tr></tr>';
-    for(var y=0; y<8; y++){
-        document.getElementsByTagName('tr').item(x).innerHTML += "<td><div onclick='console.log("+x+','+y+");' class='cell' id='cell_"+y+"_"+x+"'></div></td>"
-    }
-}
 reset();
 logicToBoard();
+
